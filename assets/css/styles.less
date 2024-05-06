@@ -1,0 +1,210 @@
+/* Colors */
+
+@color-green-block: #61892F;
+@color-green-text: #86C232;
+@color-grey: #3E4245;
+@color-black: #222629;
+@color-white: #ffffff;
+@color-red: #B13535;
+
+/* Text size */
+
+@text-large: 34px;
+@text-medium: 24px;
+@text-small: 18px;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;  
+    font-weight: 500;
+    text-decoration: none;
+    color: @color-white;
+}
+
+a{
+    padding: 10px 10px;
+}
+
+table{
+    border-collapse: collapse;
+    th, td{
+        border: 1px solid @color-white;
+        text-align: left;
+        padding: 5px 20px;
+    } 
+}
+
+path, ellipse{
+    fill: @color-grey; 
+    stroke: @color-white;
+}
+svg{
+    .active{
+        fill:@color-green-block;
+    }
+}
+
+.switch-cell{
+    border: none;
+    width: 30px;
+    img{
+        cursor: pointer;
+        display: table-cell;
+        vertical-align: middle;
+        margin: 0 auto;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+select{
+    color: @color-white;
+    background-color: #3E4245;
+    outline: none;
+    border: 0;
+    font-size: @text-medium;
+    width: 100%;
+    text-align: center;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    option{
+        color: @color-white;
+        ::selection{
+            background: @color-black;
+            color: @color-white;
+        }
+        :hover{
+            background-color: @color-black;
+        }
+    }
+    :active{
+        border: 0;
+    }
+    :hover{
+        background-color: @color-white;
+        color: @color-black;
+    }
+}
+input{
+    color: @color-black;
+    outline: none;
+    font-size: @text-medium;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    padding: 0 20px;
+
+}
+
+.container{
+    width: 1700px;
+    margin: 0 auto;
+}
+
+
+::selection {
+    background: @color-black; /* Цвет фона */
+    
+   }
+body{
+    background-color: @color-grey;
+}
+header{
+    height: 100px;
+    background-color: @color-green-block;
+    display: flex;
+    align-items: center;
+    a{
+        display: block;
+        width: 350px;
+        padding: 0 40px;
+        font-size: @text-large;
+        box-sizing: border-box;
+    }
+    h1{
+        display: block;
+        padding: 0 40px;
+        font-size: @text-large;
+        box-sizing: border-box;
+    }
+}
+
+.data-tables{
+    display: block;
+    font-size: @text-medium;
+    table{
+        width: 45vw;
+        margin: 0 0 40px 0;
+        .remove{
+            background-color: @color-red;
+            text-decoration: line-through;
+        }
+        .remove :last-child{
+            background-color: @color-grey;
+        }
+    }
+}
+.table{
+    display: flex;
+}
+
+main{
+    padding: 20px 40px;
+    background-color: @color-grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.module-content{
+    width: 50%;
+    h2{
+        color: @color-green-text;
+        font-size: @text-large;
+        margin: 20px 0;
+    }
+    p{
+        font-size: @text-medium;
+        margin-bottom: 20px;
+    }
+    
+}
+
+.numeric-range{
+    display: flex;
+    justify-content: space-between;
+    width: 285px;    
+    margin-left: 133px;
+    font-size: @text-small;
+}
+
+.btn{
+    background-color: @color-green-block;
+    border-radius: 20px;
+    font-size: @text-medium;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    color: @color-white;
+    cursor: pointer;
+    
+}
+.report-btn{
+    float: right;
+    margin-right: 70px;
+}
+.prev-next-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}

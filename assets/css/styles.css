@@ -1,0 +1,288 @@
+/* Colors */
+/* Text size */
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiLXA3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNi83A3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNirXA3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNin3A3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNic3c3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiSnc3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiLXc3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXK3I6Li01BKofIMPyPbj8d7IEAGXNiBHc3ig.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDDshRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDOUhRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDIkhRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTM.ttf) format('truetype');
+}
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  color: #ffffff;
+}
+a {
+  padding: 10px 10px;
+}
+table {
+  border-collapse: collapse;
+}
+table th,
+table td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 5px 20px;
+}
+path,
+ellipse {
+  fill: #3e4245;
+  stroke: #ffffff;
+}
+svg .active {
+  fill: #61892f;
+}
+.switch-cell {
+  border: none;
+  width: 30px;
+}
+.switch-cell img {
+  cursor: pointer;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+}
+select {
+  color: #ffffff;
+  background-color: #3E4245;
+  outline: none;
+  border: 0;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
+select option {
+  color: #ffffff;
+}
+select option ::selection {
+  background: #222629;
+  color: #ffffff;
+}
+select option :hover {
+  background-color: #222629;
+}
+select :active {
+  border: 0;
+}
+select :hover {
+  background-color: #ffffff;
+  color: #222629;
+}
+input {
+  color: #222629;
+  outline: none;
+  font-size: 24px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+.container {
+  width: 1700px;
+  margin: 0 auto;
+}
+::selection {
+  background: #222629;
+  /* Цвет фона */
+}
+body {
+  background-color: #3e4245;
+}
+header {
+  height: 100px;
+  background-color: #61892f;
+  display: flex;
+  align-items: center;
+}
+header a {
+  display: block;
+  width: 350px;
+  padding: 0 40px;
+  font-size: 34px;
+  box-sizing: border-box;
+}
+header h1 {
+  display: block;
+  padding: 0 40px;
+  font-size: 34px;
+  box-sizing: border-box;
+}
+.data-tables {
+  display: block;
+  font-size: 24px;
+}
+.data-tables table {
+  width: 45vw;
+  margin: 0 0 40px 0;
+}
+.data-tables table .remove {
+  background-color: #b13535;
+  text-decoration: line-through;
+}
+.data-tables table .remove :last-child {
+  background-color: #3e4245;
+}
+.table {
+  display: flex;
+}
+main {
+  padding: 20px 40px;
+  background-color: #3e4245;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 85vh;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+.module-content {
+  width: 50%;
+}
+.module-content h2 {
+  color: #86c232;
+  font-size: 34px;
+  margin: 20px 0;
+}
+.module-content p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.numeric-range {
+  display: flex;
+  justify-content: space-between;
+  width: 285px;
+  margin-left: 133px;
+  font-size: 18px;
+}
+.btn {
+  background-color: #61892f;
+  border-radius: 20px;
+  font-size: 24px;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.report-btn {
+  float: right;
+  margin-right: 70px;
+}
+.prev-next-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}

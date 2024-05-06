@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script defer src="assets/js/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header> 
+        <a href="#">На главную</a>
+        <h1>Блок 1. Задание 1</h1>
+    </header>
+    <main>
+        <div class="content">
+            <div class="module-content">
+                <p>Тестирование числового поля для поля ввода возраста человека, которое отсеивает пользователей в возрасте до 18 лет. Нельзя регистрироваться до 18 лет, есть запрещённый контент.</p>
+                <svg id="svg2" width="600px" viewBox="30 350 500 110" xmlns="http://www.w3.org/2000/svg">
+                    <desc>Source: openclipart.org/detail/209545</desc>
+                    <defs></defs>
+                    <!-- Средняя дуга -->
+                    <path id="center-arc" d="M 260.676 400.093 C 318.432 400.093 365.82 423.02 370.584 452.213 L 150.768 452.213 C 155.532 423.02 202.92 400.093 260.676 400.093 Z"></path>
+                    <!-- Левая дуга -->
+                    <path id="left-arc" d="M 40.352 400.108 C 98.108 400.108 145.496 423.035 150.26 452.228 L 39.716 452.228 L 39.716 400.109 C 39.928 400.108 40.14 400.108 40.352 400.108 Z" ></path>
+                    <!-- Правая дуга -->
+                    <path id="right-arc" d="M 371.623 452.221 C 429.866 452.221 477.651 429.294 482.456 400.101 L 370.983 400.101 L 370.983 452.22 C 371.197 452.221 371.409 452.221 371.623 452.221 Z" style="transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(-1, 0, 0, -1, 0.000035, -0.000001)"></path>
+                    <!-- Правая целая точка -->
+                    <ellipse id="right-integer-point" cx="370.58" cy="451.932" rx="3" ry="3"></ellipse>
+                    <!-- Правая правая точка -->
+                    <ellipse id="right-major-point"  cx="377.183" cy="451.98" rx="3" ry="3"></ellipse>
+                    <!-- Правая левая точка -->
+                    <ellipse id="right-minor-point"  cx="363.756" cy="451.98" rx="3" ry="3"></ellipse>
+                    <!-- Левая целая точка -->
+                    <ellipse id="left-integer-point"  cx="150.386" cy="452.051" rx="3" ry="3"></ellipse>
+                    <!-- Левая правая точка -->
+                    <ellipse id="left-major-point"  cx="156.989" cy="452.098" rx="3" ry="3"></ellipse>
+                    <!-- Левая левая точка -->
+                    <ellipse id="left-minor-point"  cx="143.562" cy="452.098" rx="3" ry="3"></ellipse>
+                  </svg>
+                  <div class="numeric-range">
+                    <span>18</span>
+                    <span>100</span>
+                  </div>
+                  
+                <form action="">
+                    <input id="input" type="text" placeholder="Текстовое поле">
+                    <input id="formBtn" type="submit" value="Подтвердить" class="btn">
+                    <p class="result"></p>
+                </form>
+                
+            </div>
+            <div class="data-tables">
+                <div class="table">
+                    <table id="equivalent">
+                        <tr>
+                            <th colspan="3">Разделение на эквивалентные классы</th>
+                        </tr>
+                        <tr>
+                            <th>Вводимые данные</th>
+                            <th>Результат</th>
+                            <th>Статус</th>
+                        </tr>
+                        
+                    </table>
+                    
+                </div>
+                
+                <table id="limit">
+                    <tr>
+                        <th colspan="3">Анализ граничных значений</th>
+                    </tr>
+                    <tr>
+                        <th>Вводимые данные</th>
+                        <th>Результат</th>
+                        <th>Статус</th>
+                    </tr>
+                </table>
+                <table id="exploratory">
+                    <tr>
+                        <th colspan="3">Исследовательское тестирование</th>
+                    </tr>
+                    <tr>
+                        <th>Вводимые данные</th>
+                        <th>Результат</th>
+                        <th>Статус</th>
+                    </tr>
+                </table>
+                <p id="tableBtn" class="report-btn btn">Сформировать<br>чек-лист</p>
+            </div>
+        </div>  
+        <div class="prev-next-buttons">
+            <a href="" class="btn">Предыдущий</a>
+            <a href="" class="btn">Следующий</a>
+        </div>
+    </main> 
+    
+    <script defer src="assets/js/Test_1_1.js"></script> 
+</body>
+</html>
