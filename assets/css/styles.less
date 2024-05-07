@@ -182,10 +182,14 @@ main{
 
 .numeric-range{
     display: flex;
-    justify-content: space-between;
-    width: 285px;    
-    margin-left: 133px;
+    justify-content: space-around;
     font-size: @text-small;
+    box-sizing: border-box;
+    span{
+        min-width: 33px;
+        text-align: center;
+    }
+    margin-bottom: 20px;
 }
 
 .btn{

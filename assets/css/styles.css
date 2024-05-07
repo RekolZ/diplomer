@@ -262,10 +262,14 @@ main {
 }
 .numeric-range {
   display: flex;
-  justify-content: space-between;
-  width: 285px;
-  margin-left: 133px;
+  justify-content: space-around;
   font-size: 18px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.numeric-range span {
+  min-width: 33px;
+  text-align: center;
 }
 .btn {
   background-color: #61892f;
