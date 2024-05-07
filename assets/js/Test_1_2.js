@@ -24,132 +24,110 @@ if (window.jQuery) {
 
     //Тест ввода
     let lastRange = arcs[0]
+
     $submitBtn.on('click',(event)=>{
         event.preventDefault();
-        let code = $input.val()
-        switch(true){
-            case code < '0' && code >=-1: {
-                $result.text("Ошибка: Некорректное количество")
+        if($input.val().trim() === ''){
+            $result.text("Ошибка: Заполните текстовое поле")
+            lastRange.removeAttr('class')
+        }
+        else if (/[a-zа-яё]/i.test($input.val())){
+            $result.text("Ошибка: буквы")
+        }
+        else if($input.val()<0){
+            $result.text("Ошибка: Некорректное количество")
+            if($input.val()>=-1){
                 lastRange.removeAttr('class')
                 ellipses[0].addClass('active')
                 lastRange = ellipses[0]
-                break
             }
-            case code = '0':{
-                $result.text("0")
+            else{
                 lastRange.removeAttr('class')
-                ellipses[1].addClass('active')
-                lastRange = ellipses[1]
-                break}
-            case '-0':{
-                $result.text("0")
-                lastRange.removeAttr('class')
-                ellipses[1].addClass('active')
-                lastRange = ellipses[1]
-                break}
-            case '1':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
-                ellipses[2].addClass('active')
-                lastRange = ellipses[2]
-                break}
-            case '99':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
-                ellipses[3].addClass('active')
-                lastRange = ellipses[3]
-                break}
-            case '100':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
+                arcs[0].addClass('active')
+                lastRange = arcs[0]
+            }
+        }
+        else if($input.val()<=100){
+            $result.text(10*$input.val() + ' рублей')
+            lastRange.removeAttr('class')
+            if($input.val()==100){
                 ellipses[4].addClass('active')
                 lastRange = ellipses[4]
-                break}
-            case '101':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
+            }
+            else if($input.val()==0){
+                ellipses[1].addClass('active')
+                lastRange = ellipses[1]
+                }
+            else if($input.val()<=1){
+                ellipses[2].addClass('active')
+                lastRange = ellipses[2]
+            }
+            else if($input.val()>=99){
+                ellipses[3].addClass('active')
+                lastRange = ellipses[3]
+                }
+            else{
+            arcs[1].addClass('active')
+            lastRange = arcs[1]
+            }
+        }
+        else if($input.val()<=200){
+            $result.text(9*$input.val() + ' рублей')
+            lastRange.removeAttr('class')
+            
+            if($input.val()<=101){
                 ellipses[5].addClass('active')
                 lastRange = ellipses[5]
-                break}
-            case '199':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
-                ellipses[6].addClass('active')
-                lastRange = ellipses[6]
-                break}
-            case '200':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
+            }
+            else if($input.val()==200){
                 ellipses[7].addClass('active')
                 lastRange = ellipses[7]
-                break}
-            case '201':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
+                }
+            else if($input.val()>=199){
+                ellipses[6].addClass('active')
+                lastRange = ellipses[6]
+            }
+            else{
+                arcs[2].addClass('active')
+                lastRange = arcs[2]
+            }
+        }
+        else if($input.val()<=300){
+            $result.text(8*$input.val() + ' рублей')
+            lastRange.removeAttr('class')
+            if($input.val()<=201){
                 ellipses[8].addClass('active')
                 lastRange = ellipses[8]
-                break}
-            case '299':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
-                ellipses[9].addClass('active')
-                lastRange = ellipses[9]
-                break}
-            case '300':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
+            }
+            else if($input.val()==300){
                 ellipses[10].addClass('active')
                 lastRange = ellipses[10]
-                break}
-            case '301':{
-                $result.text("цифры")
-                lastRange.removeAttr('class')
-                ellipses[11].addClass('active')
-                lastRange = ellipses[11]
-                break;}
-            default:{
-                if($input.val().trim() === ''){
-                    $result.text("Ошибка: Заполните текстовое поле")
-                    lastRange.removeAttr('class')
                 }
-                else if (/[a-zа-яё]/i.test($input.val())){
-                    $result.text("Ошибка: буквы")
-                    lastRange.removeAttr('class')
-                }
-                else if($input.val()<0){
-                    $result.text("Ошибка: Некорректное количество")
-                    lastRange.removeAttr('class')
-                    arcs[0].addClass('active')
-                    lastRange = arcs[0]
-                }
-                else if($input.val()<100){
-                    $result.text("цифры")
-                    lastRange.removeAttr('class')
-                    arcs[1].addClass('active')
-                    lastRange = arcs[1]
-                }
-                else if($input.val()<200){
-                    $result.text("цифры")
-                    lastRange.removeAttr('class')
-                    arcs[2].addClass('active')
-                    lastRange = arcs[2]
-                }
-                else if($input.val()<=300){
-                    $result.text("цифры")
-                    lastRange.removeAttr('class')
-                    arcs[3].addClass('active')
-                    lastRange = arcs[3]
-                }
-                else if($input.val()>300){
-                    $result.text("цифры")
-                    lastRange.removeAttr('class')
-                    arcs[4].addClass('active')
-                    lastRange = arcs[4]
-                }
-                break}
+            else if($input.val()>=299){
+                ellipses[9].addClass('active')
+                lastRange = ellipses[9]
+            }
+            else{
+                arcs[3].addClass('active')
+                lastRange = arcs[3]
+            }
         }
-        
-
+        else if($input.val()>300){
+            $result.text(7*$input.val() + ' рублей')
+            if($input.val()==301){
+            lastRange.removeAttr('class')
+            ellipses[11].addClass('active')
+            lastRange = ellipses[11]
+            }
+            else{
+            lastRange.removeAttr('class')
+            arcs[4].addClass('active')
+            lastRange = arcs[4]
+            }
+        }
+        if (!Number.isInteger($input.val())){
+            $result.text("Ошибка: дробное число")
+        }
 
         if(/[a-zа-яё]/i.test($input.val()) || $input.val().trim() === ''){
             $exploratoryTable.append(`
@@ -166,7 +144,7 @@ if (window.jQuery) {
             </td>
         </tr>`)
         }
-        else if(($input.val()>=17 && $input.val()<=19) || ($input.val()>=99 && $input.val()<=101)){
+        else if(($input.val()>=-1 && $input.val()<=1) || ($input.val()>=99 && $input.val()<=101) || ($input.val()>=199 && $input.val()<=201) || ($input.val()>=299 && $input.val()<=301)){
             $limitTable.append(`
             <tr><td>`+$input.val()+`</td>
             <td>`+$result.text()+`</td>
