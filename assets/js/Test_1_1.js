@@ -54,7 +54,7 @@ if (window.jQuery) {
         }
       }
       else if (/[a-zа-яё]/i.test($input.val())){
-        $result.text("Ошибка: буквы")
+        $result.text("Ошибка: Вы ввели не числовое значение")
       }
       else{
         $result.text("Зарегистрирован")

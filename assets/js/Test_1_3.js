@@ -10,7 +10,7 @@ if (window.jQuery) {
     const $result = $(".result")
 
     const ellipses = [];
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 15; i++) {
         const ellipseId = `ellipse-${i}`;
         const $ellipse = $('#'+ellipseId);
         ellipses.push($ellipse);
@@ -31,11 +31,11 @@ if (window.jQuery) {
             $result.text("Ошибка: Заполните текстовое поле")
             lastRange.removeAttr('class')
         }
-        else if (/[a-zа-яё]/i.test($input.val())){
+        else if (!Number.isInteger(parseInt($input.val()))){
             $result.text("Ошибка: Вы ввели не числовое значение")
         }
         else if($input.val()<0){
-            $result.text("Ошибка: Некорректное количество")
+            $result.text("Ошибка: Некорректный возраст")
             if($input.val()>=-1){
                 lastRange.removeAttr('class')
                 ellipses[0].addClass('active')
@@ -47,14 +47,11 @@ if (window.jQuery) {
                 lastRange = arcs[0]
             }
         }
-        else if($input.val()<=100){
-            $result.text(10*$input.val() + ' рублей')
+        else if($input.val()<16){
+            $result.text('Не принят')
             lastRange.removeAttr('class')
-            if($input.val()==100){
-                ellipses[4].addClass('active')
-                lastRange = ellipses[4]
-            }
-            else if($input.val()==0){
+            
+            if($input.val()==0){
                 ellipses[1].addClass('active')
                 lastRange = ellipses[1]
                 }
@@ -62,7 +59,7 @@ if (window.jQuery) {
                 ellipses[2].addClass('active')
                 lastRange = ellipses[2]
             }
-            else if($input.val()>=99){
+            else if($input.val()>=15){
                 ellipses[3].addClass('active')
                 lastRange = ellipses[3]
                 }
@@ -71,53 +68,68 @@ if (window.jQuery) {
             lastRange = arcs[1]
             }
         }
-        else if($input.val()<=200){
-            $result.text(9*$input.val() + ' рублей')
+        else if($input.val()<18){
+            $result.text('Принят на неполный рабочий день.')
             lastRange.removeAttr('class')
-            
-            if($input.val()<=101){
-                ellipses[5].addClass('active')
-                lastRange = ellipses[5]
-            }
-            else if($input.val()==200){
-                ellipses[7].addClass('active')
-                lastRange = ellipses[7]
-                }
-            else if($input.val()>=199){
-                ellipses[6].addClass('active')
-                lastRange = ellipses[6]
+            if($input.val()==16){
+                ellipses[4].addClass('active')
+                lastRange = ellipses[4]
             }
             else{
-                arcs[2].addClass('active')
-                lastRange = arcs[2]
-            }
+                ellipses[5].addClass('active')
+                lastRange = ellipses[5]
+                }
         }
-        else if($input.val()<=300){
-            $result.text(8*$input.val() + ' рублей')
+        else if($input.val()<=55){
+            $result.text('Принят на полный рабочий день.')
             lastRange.removeAttr('class')
-            if($input.val()<=201){
+            if($input.val()==55){
+                ellipses[10].addClass('active')
+                lastRange = ellipses[10]
+            }
+            else if($input.val()==18){
+                ellipses[7].addClass('active')
+                lastRange = ellipses[7]
+            }
+            else if($input.val()<=19){
                 ellipses[8].addClass('active')
                 lastRange = ellipses[8]
             }
-            else if($input.val()==300){
-                ellipses[10].addClass('active')
-                lastRange = ellipses[10]
-                }
-            else if($input.val()>=299){
+            else if($input.val()>=54){
                 ellipses[9].addClass('active')
                 lastRange = ellipses[9]
-            }
+                }
             else{
-                arcs[3].addClass('active')
-                lastRange = arcs[3]
+            arcs[2].addClass('active')
+            lastRange = arcs[2]
             }
         }
-        else if($input.val()>300){
-            $result.text(7*$input.val() + ' рублей')
-            if($input.val()==301){
+        else if($input.val()<=99){
+            $result.text('Не принят')
             lastRange.removeAttr('class')
-            ellipses[11].addClass('active')
-            lastRange = ellipses[11]
+            if($input.val()==99){
+                ellipses[13].addClass('active')
+                lastRange = ellipses[13]
+            }
+            else if($input.val()<=56){
+                ellipses[11].addClass('active')
+                lastRange = ellipses[11]
+            }
+            else if($input.val()>=98){
+                ellipses[12].addClass('active')
+                lastRange = ellipses[12]
+                }
+            else{
+            arcs[3].addClass('active')
+            lastRange = arcs[3]
+            }
+        }
+        else if($input.val()>99){
+            $result.text('Ошибка: Скорее всего вы умерли')
+            if($input.val()==100){
+            lastRange.removeAttr('class')
+            ellipses[14].addClass('active')
+            lastRange = ellipses[14]
             }
             else{
             lastRange.removeAttr('class')
@@ -126,25 +138,22 @@ if (window.jQuery) {
             }
         }
         
-        if ($input.val() % 1 !== 0){
-            $result.text("Ошибка: дробное число")
-        }
-        if(!Number.isInteger(parseInt($input.val())) || $input.val() % 1 !== 0){
+        if(!Number.isInteger(parseInt($input.val()))){
             $exploratoryTable.append(`
-        <tr><td>`+$input.val()+`</td>
-            <td>`+$result.text()+`</td>
-            <td>
-            <select name="status" id="">
-                <option value="1">Pass</option>
-                <option value="0">Fail</option>
-            </select>
-            </td>
-            <td class="switch-cell">
-            <img src="./assets/img/cross.png" alt="">
-            </td>
-        </tr>`)
+            <tr><td>`+$input.val()+`</td>
+                <td>`+$result.text()+`</td>
+                <td>
+                <select name="status" id="">
+                    <option value="1">Pass</option>
+                    <option value="0">Fail</option>
+                </select>
+                </td>
+                <td class="switch-cell">
+                <img src="./assets/img/cross.png" alt="">
+                </td>
+            </tr>`)
         }
-        else if(($input.val()>=-1 && $input.val()<=1) || ($input.val()>=99 && $input.val()<=101) || ($input.val()>=199 && $input.val()<=201) || ($input.val()>=299 && $input.val()<=301)){
+        else if(($input.val()>=-1 && $input.val()<=1) || ($input.val()>=15 && $input.val()<=19) || ($input.val()>=54 && $input.val()<=56) || ($input.val()>=98 && $input.val()<=100)){
             $limitTable.append(`
             <tr><td>`+$input.val()+`</td>
             <td>`+$result.text()+`</td>
