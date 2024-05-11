@@ -55,6 +55,7 @@ if (window.jQuery) {
       }
       else if (/[a-zа-яё]/i.test($input.val())){
         $result.text("Ошибка: Вы ввели не числовое значение")
+        lastRange.removeAttr('class')
       }
       else{
         $result.text("Зарегистрирован")
@@ -92,7 +93,7 @@ if (window.jQuery) {
           </select>
         </td>
         <td class="switch-cell">
-          <img src="./assets/img/cross.png" alt="">
+          <img src="../assets/img/cross.png" alt="">
         </td>
       </tr>`)
       }
@@ -107,7 +108,7 @@ if (window.jQuery) {
             </select>
           </td>
           <td class="switch-cell">
-            <img src="./assets/img/cross.png" alt="">
+            <img src="../assets/img/cross.png" alt="">
           </td>
         </tr>`)
       }
@@ -122,7 +123,7 @@ if (window.jQuery) {
             </select>
           </td>
           <td class="switch-cell">
-            <img src="./assets/img/cross.png" alt="">
+            <img src="../assets/img/cross.png" alt="">
           </td>
         </tr>`)
       }
@@ -141,12 +142,12 @@ if (window.jQuery) {
       } 
       if(!row.classList.contains('remove')){
         row.classList.add('remove')
-        target.setAttribute('src', './assets/img/check mark.png')
+        target.setAttribute('src', '../assets/img/check mark.png')
         target.setAttribute('alt', 'check mark.png')
       }
       else{
         row.classList.remove('remove')
-        target.setAttribute('src', './assets/img/cross.png')
+        target.setAttribute('src', '../assets/img/cross.png')
         target.setAttribute('alt', 'cross.png')
       } 
     })

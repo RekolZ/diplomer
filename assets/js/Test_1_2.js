@@ -33,6 +33,7 @@ if (window.jQuery) {
         }
         else if (/[a-zа-яё]/i.test($input.val())){
             $result.text("Ошибка: Вы ввели не числовое значение")
+            lastRange.removeAttr('class')
         }
         else if($input.val()<0){
             $result.text("Ошибка: Некорректное количество")
@@ -114,7 +115,7 @@ if (window.jQuery) {
         }
         else if($input.val()>300){
             $result.text(7*$input.val() + ' рублей')
-            if($input.val()==301){
+            if($input.val()<=301){
             lastRange.removeAttr('class')
             ellipses[11].addClass('active')
             lastRange = ellipses[11]
@@ -140,7 +141,7 @@ if (window.jQuery) {
             </select>
             </td>
             <td class="switch-cell">
-            <img src="./assets/img/cross.png" alt="">
+            <img src="../assets/img/cross.png" alt="">
             </td>
         </tr>`)
         }
@@ -155,7 +156,7 @@ if (window.jQuery) {
                 </select>
             </td>
             <td class="switch-cell">
-                <img src="./assets/img/cross.png" alt="">
+                <img src="../assets/img/cross.png" alt="">
             </td>
             </tr>`)
         }
@@ -170,7 +171,7 @@ if (window.jQuery) {
                 </select>
             </td>
             <td class="switch-cell">
-                <img src="./assets/img/cross.png" alt="">
+                <img src="../assets/img/cross.png" alt="">
             </td>
             </tr>`)
         }
@@ -189,12 +190,12 @@ if (window.jQuery) {
       } 
       if(!row.classList.contains('remove')){
         row.classList.add('remove')
-        target.setAttribute('src', './assets/img/check mark.png')
+        target.setAttribute('src', '../assets/img/check mark.png')
         target.setAttribute('alt', 'check mark.png')
       }
       else{
         row.classList.remove('remove')
-        target.setAttribute('src', './assets/img/cross.png')
+        target.setAttribute('src', '../assets/img/cross.png')
         target.setAttribute('alt', 'cross.png')
       } 
     })

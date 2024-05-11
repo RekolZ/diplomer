@@ -218,7 +218,11 @@ header h1 {
   font-size: 34px;
   box-sizing: border-box;
 }
+ul {
+  margin-bottom: 30px;
+}
 li {
+  margin: 5px 0;
   list-style-type: none;
   font-size: 18px;
 }
@@ -272,7 +276,7 @@ main {
   margin-bottom: 20px;
 }
 .numeric-range span {
-  min-width: 33px;
+  min-width: 45px;
   text-align: center;
 }
 .btn {
