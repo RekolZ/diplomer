@@ -121,9 +121,6 @@
   text-decoration: none;
   color: #ffffff;
 }
-a {
-  padding: 10px 10px;
-}
 table {
   border-collapse: collapse;
 }
@@ -214,7 +211,7 @@ header a {
 }
 header h1 {
   display: block;
-  padding: 0 40px;
+  margin: 0 40px;
   font-size: 34px;
   box-sizing: border-box;
 }
@@ -229,6 +226,7 @@ li {
 .data-tables {
   display: block;
   font-size: 24px;
+  padding: 20px 40px;
 }
 .data-tables table {
   width: 45vw;
@@ -245,12 +243,45 @@ li {
   display: flex;
 }
 main {
-  padding: 20px 40px;
   background-color: #3e4245;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 85vh;
+  height: 90vh;
+}
+.main-content {
+  flex-direction: row;
+}
+.welcome-section {
+  width: 30%;
+  padding: 20px 40px;
+  background-color: #222629;
+}
+.welcome-section h2 {
+  color: #86c232;
+  font-size: 34px;
+  margin: 20px 0;
+}
+.welcome-section p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.tasks-section {
+  width: 70%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.tasks-section h2 {
+  color: #86c232;
+  font-size: 34px;
+  margin: 20px 0;
+}
+.tasks-section a {
+  font-size: 24px;
+}
+.tasks-section div {
+  width: 30%;
 }
 .content {
   display: flex;
@@ -258,6 +289,7 @@ main {
 }
 .module-content {
   width: 50%;
+  padding: 20px 40px;
 }
 .module-content h2 {
   color: #86c232;
@@ -294,6 +326,7 @@ main {
   margin-right: 70px;
 }
 .prev-next-buttons {
+  padding: 0 40px;
   display: flex;
   justify-content: space-between;
   margin-top: 60px;

@@ -25,9 +25,6 @@
     color: @color-white;
 }
 
-a{
-    padding: 10px 10px;
-}
 
 table{
     border-collapse: collapse;
@@ -127,12 +124,11 @@ header{
     }
     h1{
         display: block;
-        padding: 0 40px;
+        margin: 0 40px;
         font-size: @text-large;
         box-sizing: border-box;
     }
 }
-
 ul{
     margin-bottom: 30px;
 }
@@ -145,6 +141,7 @@ li{
 .data-tables{
     display: block;
     font-size: @text-medium;
+    padding: 20px 40px;
     table{
         width: 45vw;
         margin: 0 0 40px 0;
@@ -162,14 +159,48 @@ li{
 }
 
 main{
-    padding: 20px 40px;
+
     background-color: @color-grey;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 85vh;
+    height: 90vh;
 }
 
+.main-content{
+    flex-direction: row;
+}
+.welcome-section{
+    width: 30%;
+    padding: 20px 40px;
+    background-color: @color-black;
+    h2{
+        color: @color-green-text;
+        font-size: @text-large;
+        margin: 20px 0;
+    }
+    p{
+        font-size: @text-medium;
+        margin-bottom: 20px;
+    }
+}
+.tasks-section{
+    width: 70%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    h2{
+        color: @color-green-text;
+        font-size: @text-large;
+        margin: 20px 0;
+    }
+    a{
+        font-size: @text-medium;
+    }
+    div{
+        width: 30%;
+    }
+}
 .content{
     display: flex;
     justify-content: space-between;
@@ -177,6 +208,7 @@ main{
 
 .module-content{
     width: 50%;
+    padding: 20px 40px;
     h2{
         color: @color-green-text;
         font-size: @text-large;
@@ -217,6 +249,7 @@ main{
     margin-right: 70px;
 }
 .prev-next-buttons{
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
