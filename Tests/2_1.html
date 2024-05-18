@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script defer src="../assets/js/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header> 
+        <a href="../index.html">На главную</a>
+        <h1>Блок 2. Задание 1</h1>
+    </header>
+    <main>
+        <div class="content">
+            <div class="module-content">
+                <p>На странице Заказа пользователь вводит символьный идентификатор, указывающий
+                    на акции для купли, и количество товара. Допустимыми символами идентификатора являются
+                    любые комбинации 1-4 уникальных заглавных латинских цифр (А, ABC, AC, ..., ZOLT, ZOMX, ZONA,
+                    ZRAN). </p>
+                <table>
+                    <tr>
+                        <th>Идентификатор</th>
+                        <th>Количество</th>
+                        <th>Результат</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>10</td>
+                        <td>Корректно</td>
+                    </tr>
+                    <tr>
+                        <td>AA</td>
+                        <td>40</td>
+                        <td>Некорректно</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>0</td>
+                        <td>Некорректно</td>
+                    </tr>
+                    <tr>
+                        <td>ZOMX</td>
+                        <td>5</td>
+                        <td>Корректно</td>
+                    </tr>
+                    <tr>
+                        <td>ZOMX</td>
+                        <td>2</td>
+                        <td>Некорректно</td>
+                    </tr>
+                    <tr>
+                        <td>ABE</td>
+                        <td>-3</td>
+                        <td>Некорректно</td>
+                    </tr>
+                </table>
+                
+            
+                  
+                <form action="">
+                    <input id="input1" type="text" placeholder="Идентификатор">
+                    
+                    <input id="formBtn" type="submit" value="Подтвердить" class="btn">
+
+                    <input id="input2" type="text" placeholder="Количество">
+                    <p class="result"></p>
+                </form>
+                
+            </div>
+            <div class="data-tables">
+           
+                    <table id="equivalent">
+                        <tr>
+                            <th colspan="4">Разделение на эквивалентные классы</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Вводимые данные</th>
+                            <th>Результат</th>
+                            <th>Статус</th>
+                        </tr>
+                        
+                    </table>
+                    
+      
+                <p id="tableBtn" class="report-btn btn">Сформировать<br>чек-лист</p>
+            </div>
+        </div>  
+        <div class="prev-next-buttons">
+            <a href="./1_3.html" class="btn">Предыдущий</a>
+            <a href="./2_1.html" class="btn">Следующий</a>
+        </div>
+    </main> 
+    
+    <script defer src="../assets/js/Test_2_1.js"></script> 
+</body>
+</html>
