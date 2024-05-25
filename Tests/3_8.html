@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script defer src="../assets/js/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header> 
+        <a href="../index.html">На главную</a>
+        <h1>Блок 3. Задание 8</h1>
+    </header>
+    <main>
+        <div class="content">
+            <div class="module-content">
+                <p>Тестирование загрузки изображения.</p>
+                <ul>
+                    <li>Доступные форматы файла .png , .jpeg</li>
+                    <li>Размер файла от 500КБ до 5МБ</li>
+                    <li>Минимальный размер изображения 250x250px</li>
+                    <li>Если формат А5, то размер изображения &lt= 650x650px</li>
+                    <li>Если формат А4, то размер изображения &lt= 1200х1200px</li>
+                    <li>Имя файла не должно содержать символы и буквы кириллицы</li>
+                    <li>Длина имени файла &lt= 15 и >= 3 символов</li>
+                    <li>Имя файла содержит латинские буквы и цифры</li>
+                </ul>
+                <form action="">
+                    <input id="input" type="file" accept="image/jpeg,image/png">
+                    <p hidden id="height"></p>
+                    <p hidden id="width"></p>
+                    <div class="result"></div>
+                </form>
+                
+            </div>
+            <div class="data-tables">
+                <div class="table">
+                    <table id="equivalent">
+                        <tr>
+                            <th colspan="3">Разделение на эквивалентные классы</th>
+                        </tr>
+                        <tr>
+                            <th>Вводимые данные</th>
+                            <th>Результат</th>
+                            <th>Статус</th>
+                        </tr>
+                        
+                    </table>
+                    
+                </div>
+                <p id="tableBtn" class="report-btn btn">Сформировать<br>чек-лист</p>
+            </div>
+        </div>  
+        <div class="prev-next-buttons">
+            <a href="./3_7.html" class="btn">Предыдущий</a>
+        </div>
+    </main> 
+    
+    <script defer src="../assets/js/Test_3_8.js"></script> 
+</body>
+</html>
