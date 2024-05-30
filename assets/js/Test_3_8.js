@@ -27,51 +27,48 @@ if (window.jQuery) {
           img.style.maxHeight ='300px'
           $width.text(img.width)
           $height.text(img.height)
-          
+          if(file.size > 5 * 1024 * 1024 || file.size < 500 * 1024) { // Ограничение размера от 500КБ до 5МБ
+            $result.text('Ошибка: Недопустимый размер изображения')
+          }
+          else if(/[!@#$%^&*а-яёА-ЯЁ]/i.test($input.val())){ // Проверка на наличие кириллицы и специальных символов
+            $result.text('Ошибка: Имя файла не должно содержать символы и буквы кириллицы')
+          }
+          else if(file.width < 250) { // Ограничение величины изображения
+            $result.text('Ошибка: Изображение слишком маленькое')
+          }
+          else if(file.name.length > 15 || file.name.length < 3){ // Ограничение количества символов в названии
+            $result.text('Ошибка: Название изображения слишком длинное/короткое')
+          }
+          else if(!file.name.endsWith('jpeg') && !file.name.endsWith('png')){ // Проверка формата изображения
+            $result.text('Ошибка: Неверный формат изображения')
+          }
+          else{
+            $result.text('Успех')
+            $result.append(img)  
+          }  
+              $equivalentTable.append(`
+              <tr><td><p>`+file.name+`</p>
+              <p>Размер: `+Math.round(file.size / 1024)+` КБ</p>
+              <p>Ширина: `+$width.text()+`px</p>
+              <p>Высота: `+$height.text()+`px</p></td>
+              <td>`+$result.text()+`</td>
+              <td>
+                  <select name="status" id="">
+                      <option value="1">Pass</option>
+                      <option value="0">Fail</option>
+                  </select>
+              </td>
+              <td class="switch-cell">
+                  <img src="../assets/img/cross.png" alt="">
+              </td>
+              </tr>`)
+
         };
         
  
      
 
-        if(file.size > 5 * 1024 * 1024 || file.size < 500 * 1024) { // Ограничение размера от 500КБ до 5МБ
-          $result.text('Ошибка: Недопустимый размер изображения')
-        }
-        else if(!file.name){ // Невозможно.
-          $result.text('Ошибка: А где.')
-        }
-        else if(/[!@#$%^&*а-яёА-ЯЁ]/i.test($input.val())){ // Проверка на наличие кириллицы и специальных символов
-          $result.text('Ошибка: Имя файла не должно содержать символы и буквы кириллицы')
-        }
-        else if(file.width < 250) { // Ограничение величины изображения
-          $result.text('Ошибка: Изображение слишком маленькое')
-        }
-        else if(file.name.length > 15 || file.name.length < 3){ // Ограничение количества символов в названии
-          $result.text('Ошибка: Название изображения слишком длинное/короткое')
-        }
-        else if(!file.name.endsWith('jpeg') && !file.name.endsWith('png')){ // Проверка формата изображения
-          $result.text('Ошибка: Неверный формат изображения')
-        }
-        else{
-          $result.text('Успех')
-          $result.append(img)  
-        }  
-            $equivalentTable.append(`
-            <tr><td><p>`+file.name+`</p>
-            <p>Размер: `+Math.round(file.size / 1024)+` КБ</p>
-            <p>Ширина: `+$width.text()+`px</p>
-            <p>Высота: `+$height.text()+`px</p></td>
-            <td>`+$result.text()+`</td>
-            <td>
-                <select name="status" id="">
-                    <option value="1">Pass</option>
-                    <option value="0">Fail</option>
-                </select>
-            </td>
-            <td class="switch-cell">
-                <img src="../assets/img/cross.png" alt="">
-            </td>
-            </tr>`)
-        $input.val('')
+      
       };
       
       reader.readAsDataURL(file);
