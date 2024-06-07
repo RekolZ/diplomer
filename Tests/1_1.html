@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script defer src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <header> 
-        <a href="../index.html">На главную</a>
-        <h1>Блок 1. Задание 1</h1>
+        <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="logo">
+            <p>TestTutor</p>
+        </a>
+        <h1>Возраст человека</h1>
     </header>
     <main>
         <div class="content">
             <div class="module-content">
                 <p>Тестирование числового поля для поля ввода возраста человека, которое отсеивает пользователей в возрасте до 18 лет. Нельзя регистрироваться до 18 лет, есть запрещённый контент.</p>
-                <?xml version="1.0" encoding="utf-8"?>
                 <svg viewBox="191.892 247.238 442.7403 56.088" width="445.7403" height="58" xmlns="http://www.w3.org/2000/svg">
                 <path id="center-arc" d="M 412.852 247.238 C 470.608 247.238 517.996 270.165 522.76 299.358 L 302.944 299.358 C 307.708 270.165 355.096 247.238 412.852 247.238 Z"  transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 2.842170943040401e-14)"/>
                 <path id="left-arc" d="M 192.528 247.253 C 250.284 247.253 297.672 270.18 302.436 299.373 L 191.892 299.373 L 191.892 247.254 C 192.104 247.253 192.316 247.253 192.528 247.253 Z"  transform="matrix(1.0000000000000002, 0, 0, 1.0000000000000002, 0, 2.842170943040401e-14)"/>
@@ -33,7 +36,7 @@
                     <span>100</span>
                 </div>
                   
-                <form action="">
+                <form>
                     <input id="input" type="text" placeholder="Текстовое поле">
                     <input id="formBtn" type="submit" value="Подтвердить" class="btn">
                     <p class="result"></p>

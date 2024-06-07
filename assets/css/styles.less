@@ -9,9 +9,19 @@
 
 /* Text size */
 
-@text-large: 34px;
-@text-medium: 24px;
-@text-small: 18px;
+@text-large-xxl: 34px;
+@text-medium-xxl: 24px;
+@text-small-xxl: 18px;
+@text-large-xl: 32px;
+@text-medium-xl: 22px;
+@text-small-xl: 16px;
+@text-large-lg: 28px;
+@text-medium-lg: 18px;
+@text-small-lg: 12px;
+@text-large-md: 24px;
+@text-medium-md: 18px;
+@text-small-md: 10px;
+
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
@@ -37,17 +47,13 @@ table{
 }
 
 path, ellipse{
-    fill: @color-grey; 
+    fill: @color-grey;
     stroke: @color-white;
 }
 svg{
     .active{
         fill:@color-green-block;
     }
-}
-
-input{
-    
 }
 
 .switch-cell{
@@ -68,7 +74,7 @@ select{
     background-color: #3E4245;
     outline: none;
     border: 0;
-    font-size: @text-medium;
+    font-size: @text-medium-xxl;
     width: 100%;
     text-align: center;
     // -webkit-appearance: none;
@@ -94,7 +100,7 @@ select{
 input{
     color: @color-black;
     outline: none;
-    font-size: @text-medium;
+    font-size: @text-medium-xxl;
     height: 50px;
     border: none;
     border-radius: 20px;
@@ -103,12 +109,6 @@ input{
     display: block;
 }
 
-.container{
-    width: 1700px;
-    margin: 0 auto;
-}
-
-
 ::selection {
     background: @color-black; /* Цвет фона */
     
@@ -116,23 +116,25 @@ input{
 body{
     background-color: @color-grey;
     
+    height: 100%;
 }
 header{
     height: 100px;
     background-color: @color-green-block;
-    display: flex;
     align-items: center;
+    display: flex;
     a{
-        display: block;
+        display: flex;
         width: 350px;
-        padding: 0 40px;
-        font-size: @text-large;
+        margin: 0 40px;
+        font-size: @text-large-xxl;
         box-sizing: border-box;
+        align-items: center;
     }
     h1{
         display: block;
         margin: 0 40px;
-        font-size: @text-large;
+        font-size: @text-large-xxl;
         box-sizing: border-box;
     }
 }
@@ -142,12 +144,12 @@ ul{
 li{
     margin: 5px 0;
     list-style-type: none;
-    font-size: @text-small;
+    font-size: @text-small-xxl;
 }
 
 .data-tables{
     display: block;
-    font-size: @text-medium;
+    font-size: @text-medium-xxl;
     padding: 20px 40px;
     table{
         width: 45vw;
@@ -167,12 +169,11 @@ li{
 }
 
 main{
-
     background-color: @color-grey;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 87vh;
+    min-height: 89.3vh;
 }
 
 .main-content{
@@ -180,15 +181,16 @@ main{
 }
 .welcome-section{
     width: 30%;
+    
     padding: 20px 40px;
     background-color: @color-black;
     h2{
         color: @color-green-text;
-        font-size: @text-large;
+        font-size: @text-large-xxl;
         margin: 20px 0;
     }
     p{
-        font-size: @text-medium;
+        font-size: @text-medium-xxl;
         margin-bottom: 20px;
     }
 }
@@ -199,13 +201,23 @@ main{
     justify-content: space-between;
     h2{
         color: @color-green-text;
-        font-size: @text-large;
+        font-size: @text-large-xxl;
         margin: 20px 0;
+        min-height: 150px;
     }
     a{
-        font-size: @text-medium;
+        font-size: @text-medium-xxl; 
     }
+    li{
+        a{
+            border-bottom: dotted @color-black 4px;
+        }
+        :hover{
+            color:@color-green-text; 
+        } 
+    } 
     div{
+        min-width: 290px;
         width: 30%;
     }
 }
@@ -215,7 +227,7 @@ main{
 }
 
 .result{
-    font-size: @text-medium;
+    font-size: @text-medium-xxl;
     margin-bottom: 20px;
 }
 
@@ -224,11 +236,11 @@ main{
     padding: 20px 40px;
     h2{
         color: @color-green-text;
-        font-size: @text-large;
+        font-size: @text-large-xxl;
         margin: 20px 0;
     }
     p{
-        font-size: @text-medium;
+        font-size: @text-medium-xxl;
         margin-bottom: 20px;
     }
     
@@ -237,7 +249,7 @@ main{
 .numeric-range{
     display: flex;
     justify-content: space-around;
-    font-size: @text-small;
+    font-size: @text-small-xxl;
     box-sizing: border-box;
     span{
         min-width: 45px;
@@ -250,7 +262,7 @@ main{
     padding: 10px 0;
     background-color: @color-green-block;
     border-radius: 20px;
-    font-size: @text-medium;
+    font-size: @text-medium-xxl;
     align-items: center;
     text-align: center;
     width: 250px;
@@ -259,12 +271,257 @@ main{
     
 }
 .report-btn{
-    float: right;
-    margin-right: 70px;
+    margin: 0 auto;
 }
 .prev-next-buttons{
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
+}
+
+/* Для экранов ≥576px */
+@media (min-width: 576px) {
+    header{
+        h1{
+            margin: 0;
+            
+        }
+    }
+    .main-content{
+        flex-direction: column;
+    }
+    .welcome-section{
+
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .tasks-section{
+        box-sizing: border-box;
+        flex-direction: column;
+        width: 90%;
+        div{
+            width: 100%;
+        }
+        h2{
+            min-height: auto;
+        }
+    }
+    .data-tables table{
+        
+        width: 100%;
+    }
+    .content {
+        padding: 5px 0;
+        flex-direction: column;
+    }
+    .module-content {
+        width: 85%;
+    }
+    .report-btn{
+        float: left;
+    }
+}
+
+/* Для экранов ≥768px */
+@media (min-width: 768px) {
+}
+
+/* Для экранов ≥992px */
+@media (min-width: 992px) {
+    header{
+        a{
+            font-size: @text-large-lg;
+            margin: 0 20px;
+        }
+        h1{
+            font-size: @text-large-lg;
+            margin: 0 20px;
+        }
+    }
+    select{
+        font-size: @text-medium-lg;
+    }
+    input{
+        font-size: @text-medium-lg;
+    }
+    li{
+        font-size: @text-small-lg;
+    }
+    .main-content{
+        flex-direction: row;
+    }
+    .welcome-section{
+        width: 30%;
+        h2{
+            font-size: @text-large-lg;
+        }
+        p{
+            font-size: @text-medium-lg;
+        }
+    }
+    .tasks-section{
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 70%;
+        div{
+            width: 30%;
+        }
+        h2{
+            min-height: 110px;
+            font-size: @text-large-lg;
+        }
+        a{
+            font-size: @text-medium-lg;
+        }
+    }
+    .content {
+        padding: 10px 0;
+        flex-direction: row;
+    }
+    .module-content{
+        padding: 10px 20px;
+        width: 50%;
+        p{
+            font-size: @text-medium-lg;
+        }
+    }
+    .data-tables {
+        font-size: @text-medium-lg;
+        padding: 10px 20px;
+    }
+    .report-btn{
+        float: none;
+    }
+    .btn {
+        padding: 10px 0;
+        border-radius: 20px;
+        font-size: @text-medium-lg;
+        width: 190px;
+    }
+}
+
+/* Для экранов ≥1200px */
+@media (min-width: 1200px) {
+    header{
+        a{
+            font-size: @text-large-xl;
+            margin: 0 30px;
+        }
+        h1{
+            font-size: @text-large-xl;
+        }
+    }
+   
+    select{
+        font-size: @text-medium-xl;
+    }
+    input{
+        font-size: @text-medium-xl;
+    }
+    li{
+        font-size: @text-small-xl;
+    }
+    .welcome-section{
+        h2{
+            font-size: @text-large-xl;
+        }
+        p{
+            font-size: @text-medium-xl;
+        }
+    }
+    .tasks-section{
+        h2{
+            min-height: 172px;
+            font-size: @text-large-xl;
+        }
+        a{
+            font-size: @text-medium-xl;
+        }
+    }
+    .content {
+        padding: 10px 0;
+        margin: 0;
+    }
+    .module-content{
+        padding: 10px 30px;
+        p{
+            font-size: @text-medium-xl;
+        }
+    }
+    .data-tables {
+        font-size: @text-medium-xl;
+        padding: 10px 40px;
+        table{
+            width: 45vw;
+        }
+    }
+    .btn {
+        padding: 10px 0;
+        border-radius: 20px;
+        font-size: @text-medium-xl;
+        width: 220px;
+    }
+    
+}
+
+/* Для экранов ≥1400px */
+@media (min-width: 1400px) {
+    header{
+        a{
+            font-size: @text-large-xxl;
+            margin: 0 40px;
+        }
+        h1{
+            font-size: @text-large-xxl;
+        }
+    }
+    select{
+        font-size: @text-medium-xxl;
+    }
+    input{
+        font-size: @text-medium-xxl;
+    }
+    li{
+        font-size: @text-small-xxl;
+    }
+    table th, table td {
+        padding: 5px 20px;
+    }
+    .welcome-section{
+        h2{
+            font-size: @text-large-xxl;
+        }
+        p{
+            font-size: @text-medium-xxl;
+        }
+    }
+    .tasks-section{
+        h2{
+            min-height: 184px;
+            font-size: @text-large-xxl;
+        }
+        a{
+            font-size: @text-medium-xxl;
+        }
+    }
+    .content {
+        padding: 10px 0;
+    }
+    .module-content{
+        padding: 20px 40px;
+        p{
+            font-size: @text-medium-xxl;
+        }
+    }
+    .data-tables {
+        font-size: @text-medium-xxl;
+        padding: 20px 40px;
+    }
+    .btn {
+        padding: 10px 0;
+        border-radius: 20px;
+        font-size: @text-medium-xxl;
+        width: 250px;
+    }
 }

@@ -188,29 +188,27 @@ input {
   margin: 10px 0;
   display: block;
 }
-.container {
-  width: 1700px;
-  margin: 0 auto;
-}
 ::selection {
   background: #222629;
   /* Цвет фона */
 }
 body {
   background-color: #3e4245;
+  height: 100%;
 }
 header {
   height: 100px;
   background-color: #61892f;
-  display: flex;
   align-items: center;
+  display: flex;
 }
 header a {
-  display: block;
+  display: flex;
   width: 350px;
-  padding: 0 40px;
+  margin: 0 40px;
   font-size: 34px;
   box-sizing: border-box;
+  align-items: center;
 }
 header h1 {
   display: block;
@@ -250,7 +248,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 87vh;
+  min-height: 89.3vh;
 }
 .main-content {
   flex-direction: row;
@@ -279,11 +277,19 @@ main {
   color: #86c232;
   font-size: 34px;
   margin: 20px 0;
+  min-height: 150px;
 }
 .tasks-section a {
   font-size: 24px;
 }
+.tasks-section li a {
+  border-bottom: dotted #222629 4px;
+}
+.tasks-section li :hover {
+  color: #86c232;
+}
 .tasks-section div {
+  min-width: 290px;
   width: 30%;
 }
 .content {
@@ -330,12 +336,230 @@ main {
   cursor: pointer;
 }
 .report-btn {
-  float: right;
-  margin-right: 70px;
+  margin: 0 auto;
 }
 .prev-next-buttons {
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
+}
+/* Для экранов ≥576px */
+@media (min-width: 576px) {
+  header h1 {
+    margin: 0;
+  }
+  .main-content {
+    flex-direction: column;
+  }
+  .welcome-section {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .tasks-section {
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 90%;
+  }
+  .tasks-section div {
+    width: 100%;
+  }
+  .tasks-section h2 {
+    min-height: auto;
+  }
+  .data-tables table {
+    width: 100%;
+  }
+  .content {
+    padding: 5px 0;
+    flex-direction: column;
+  }
+  .module-content {
+    width: 85%;
+  }
+  .report-btn {
+    float: left;
+  }
+}
+/* Для экранов ≥768px */
+/* Для экранов ≥992px */
+@media (min-width: 992px) {
+  header a {
+    font-size: 28px;
+    margin: 0 20px;
+  }
+  header h1 {
+    font-size: 28px;
+    margin: 0 20px;
+  }
+  select {
+    font-size: 18px;
+  }
+  input {
+    font-size: 18px;
+  }
+  li {
+    font-size: 12px;
+  }
+  .main-content {
+    flex-direction: row;
+  }
+  .welcome-section {
+    width: 30%;
+  }
+  .welcome-section h2 {
+    font-size: 28px;
+  }
+  .welcome-section p {
+    font-size: 18px;
+  }
+  .tasks-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+  .tasks-section div {
+    width: 30%;
+  }
+  .tasks-section h2 {
+    min-height: 110px;
+    font-size: 28px;
+  }
+  .tasks-section a {
+    font-size: 18px;
+  }
+  .content {
+    padding: 10px 0;
+    flex-direction: row;
+  }
+  .module-content {
+    padding: 10px 20px;
+    width: 50%;
+  }
+  .module-content p {
+    font-size: 18px;
+  }
+  .data-tables {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  .report-btn {
+    float: none;
+  }
+  .btn {
+    padding: 10px 0;
+    border-radius: 20px;
+    font-size: 18px;
+    width: 190px;
+  }
+}
+/* Для экранов ≥1200px */
+@media (min-width: 1200px) {
+  header a {
+    font-size: 32px;
+    margin: 0 30px;
+  }
+  header h1 {
+    font-size: 32px;
+  }
+  select {
+    font-size: 22px;
+  }
+  input {
+    font-size: 22px;
+  }
+  li {
+    font-size: 16px;
+  }
+  .welcome-section h2 {
+    font-size: 32px;
+  }
+  .welcome-section p {
+    font-size: 22px;
+  }
+  .tasks-section h2 {
+    min-height: 172px;
+    font-size: 32px;
+  }
+  .tasks-section a {
+    font-size: 22px;
+  }
+  .content {
+    padding: 10px 0;
+    margin: 0;
+  }
+  .module-content {
+    padding: 10px 30px;
+  }
+  .module-content p {
+    font-size: 22px;
+  }
+  .data-tables {
+    font-size: 22px;
+    padding: 10px 40px;
+  }
+  .data-tables table {
+    width: 45vw;
+  }
+  .btn {
+    padding: 10px 0;
+    border-radius: 20px;
+    font-size: 22px;
+    width: 220px;
+  }
+}
+/* Для экранов ≥1400px */
+@media (min-width: 1400px) {
+  header a {
+    font-size: 34px;
+    margin: 0 40px;
+  }
+  header h1 {
+    font-size: 34px;
+  }
+  select {
+    font-size: 24px;
+  }
+  input {
+    font-size: 24px;
+  }
+  li {
+    font-size: 18px;
+  }
+  table th,
+  table td {
+    padding: 5px 20px;
+  }
+  .welcome-section h2 {
+    font-size: 34px;
+  }
+  .welcome-section p {
+    font-size: 24px;
+  }
+  .tasks-section h2 {
+    min-height: 184px;
+    font-size: 34px;
+  }
+  .tasks-section a {
+    font-size: 24px;
+  }
+  .content {
+    padding: 10px 0;
+  }
+  .module-content {
+    padding: 20px 40px;
+  }
+  .module-content p {
+    font-size: 24px;
+  }
+  .data-tables {
+    font-size: 24px;
+    padding: 20px 40px;
+  }
+  .btn {
+    padding: 10px 0;
+    border-radius: 20px;
+    font-size: 24px;
+    width: 250px;
+  }
 }

@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script defer src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <header> 
-        <a href="../index.html">На главную</a>
-        <h1>Блок 3. Задание 2</h1>
+         <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="logo">
+            <p>TestTutor</p>
+        </a>
+        <h1>Корректность времени</h1>
     </header>
     <main>
         <div class="content">
             <div class="module-content">
                 <p>Тестирование корректности введенного времени.</p>
-                  
-                <form action="">
+                <p>Формат времени: HH:MM:SS</p>
+                <form>
                     <input id="input" type="text" placeholder="Текстовое поле">
                     <input id="formBtn" type="submit" value="Подтвердить" class="btn">
                     <p class="result"></p>

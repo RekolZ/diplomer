@@ -55,6 +55,11 @@ if (window.jQuery) {
             </tr>`)
         $input.val('')
     })
+    $('#downloadExcel').click(function() {
+      tableToExcel();
+    });
+
+  
     
     //"Удаление" из таблицы
     $tables.on('click', (event)=>{
@@ -68,8 +73,8 @@ if (window.jQuery) {
       } 
       if(!row.classList.contains('remove')){
         row.classList.add('remove')
-        target.setAttribute('src', '../assets/img/check mark.png')
-        target.setAttribute('alt', 'check mark.png')
+        target.setAttribute('src', '../assets/img/undo.png')
+        target.setAttribute('alt', 'undo.png')
       }
       else{
         row.classList.remove('remove')
@@ -79,8 +84,71 @@ if (window.jQuery) {
     })
 
     //Сформировать чеклист
-    $tableBtn.on('click',()=>{
-      let $rows = $('.remove')
-      $rows.remove()
-    })
+    $tableBtn.on('click',() =>{
+      tablesToExcel();
+    });
+
+    function tablesToExcel() {
+      const wb = XLSX.utils.book_new();
+
+      function extractTableData(tableId) {
+        const $table = tableId;
+        const rows = [];
+        $table.find('tr').each(function() {
+            if (!$(this).hasClass('remove')) {
+                const row = [];
+                $(this).find('th, td').each(function() {
+                    const $cell = $(this);
+                    let cellValue;
+                    if ($cell.find('select').length > 0) {
+                        // Если ячейка содержит элемент <select>, берем только текст выбранной опции
+                        cellValue = $cell.find('select option:selected').text().trim();
+                    } else {
+                        // Иначе берем текстовое содержимое ячейки, включая вложенные элементы
+                        cellValue = $cell.clone().children().remove().end().text().trim();
+                    }
+                    row.push(cellValue);
+                });
+                rows.push(row);
+            }
+        });
+        return rows;
+    }
+
+      const data1 = extractTableData($equivalentTable);
+
+      console.log('Data 1:', data1); // Выводим данные в консоль
+          
+      const ws1 = XLSX.utils.aoa_to_sheet(data1);
+
+      ws1['!merges'] = [
+        // Объединение ячеек A1:D1
+        { s: { r: 0, c: 0 }, e: { r: 0, c: 2 } },
+      ];
+
+      XLSX.utils.book_append_sheet(wb, ws1, "Sheet1");
+
+
+      const wbout = XLSX.write(wb, {bookType: 'xlsx', type: 'binary'});
+
+      const s2ab = s => {
+          const buf = new ArrayBuffer(s.length);
+          const view = new Uint8Array(buf);
+          for (let i = 0; i < s.length; i++) {
+              view[i] = s.charCodeAt(i) & 0xFF;
+          }
+          return buf;
+      };
+
+      const blob = new Blob([s2ab(wbout)], {type: 'application/octet-stream'});
+      const url = URL.createObjectURL(blob);
+      const a = $('<a />', {
+          href: url,
+          download: 'tables_data.xlsx',
+          style: 'display: none'
+      }).appendTo('body');
+
+      a[0].click();
+      a.remove();
+  }
   }

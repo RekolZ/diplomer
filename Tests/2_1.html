@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script defer src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <header> 
-        <a href="../index.html">На главную</a>
-        <h1>Блок 2. Задание 1</h1>
+         <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="logo">
+            <p>TestTutor</p>
+        </a>
+        <h1>Идентификатор и количество</h1>
     </header>
     <main>
         <div class="content">
@@ -59,31 +63,25 @@
                 
             
                   
-                <form action="">
+                <form>
                     <input id="input1" type="text" placeholder="Идентификатор">
-                    
-                    <input id="formBtn" type="submit" value="Подтвердить" class="btn">
-
                     <input id="input2" type="text" placeholder="Количество">
+                    <input id="formBtn" type="submit" value="Подтвердить" class="btn">
                     <p class="result"></p>
                 </form>
                 
             </div>
             <div class="data-tables">
-           
-                    <table id="equivalent">
-                        <tr>
-                            <th colspan="4">Разделение на эквивалентные классы</th>
-                        </tr>
-                        <tr>
-                            <th colspan="2">Вводимые данные</th>
-                            <th>Результат</th>
-                            <th>Статус</th>
-                        </tr>
-                        
-                    </table>
-                    
-      
+                <table id="equivalent">
+                    <tr>
+                        <th colspan="4">Разделение на эквивалентные классы</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Вводимые данные</th>
+                        <th>Результат</th>
+                        <th>Статус</th>
+                    </tr>
+                </table>
                 <p id="tableBtn" class="report-btn btn">Сформировать<br>чек-лист</p>
             </div>
         </div>  

@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/styles.css">
     <script defer src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <header> 
-        <a href="../index.html">На главную</a>
-        <h1>Блок 3. Задание 8</h1>
+         <a href="../index.html">
+            <img src="../assets/img/logo.png" alt="logo">
+            <p>TestTutor</p>
+        </a>
+        <h1>Загрузка изображения</h1>
     </header>
     <main>
         <div class="content">
@@ -20,13 +24,13 @@
                     <li>Доступные форматы файла .png , .jpeg</li>
                     <li>Размер файла от 500КБ до 5МБ</li>
                     <li>Минимальный размер изображения 250x250px</li>
-                    <li>Если формат А5, то размер изображения &lt= 650x650px</li>
-                    <li>Если формат А4, то размер изображения &lt= 1200х1200px</li>
+                    <li>Если формат А5, то размер изображения &lt;=     650x650px</li>
+                    <li>Если формат А4, то размер изображения &lt;= 1200х1200px</li>
                     <li>Имя файла не должно содержать символы и буквы кириллицы</li>
-                    <li>Длина имени файла &lt= 15 и >= 3 символов</li>
+                    <li>Длина имени файла &lt;= 15 и >= 3 символов</li>
                     <li>Имя файла содержит латинские буквы и цифры</li>
                 </ul>
-                <form action="">
+                <form>
                     <input id="input" type="file" accept="image/jpeg,image/png">
                     <p hidden id="height"></p>
                     <p hidden id="width"></p>
